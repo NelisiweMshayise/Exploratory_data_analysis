@@ -32,7 +32,7 @@ EDA_data_NM <- Erta_EDA_Data %>%
                   select(Pid, TIME, ERTAPENEM)
                 
 
-### Drawing the line graph
+### Drawing the combined Patient Plasma Concentration-Time profiles 
 
 EDA_data_NM %>% 
   ggplot(aes(x= TIME, y= ERTAPENEM, color= factor(Pid), group= Pid))+
@@ -59,7 +59,7 @@ P <- EDA_data_NM %>%
   )
 ggsave("EDA_second_combined_line_graph.png", P, width = 8, height = 5)
 ```
-
+## Individual Plasma Concentration-Time profiles
 
 ```{r}
 
@@ -83,4 +83,5 @@ p <- EDA_data_NM %>%
 
 ggsave("Individuals_EDA_line_graph_B.png", p, width = 8, height = 5)
 ```
+
 
