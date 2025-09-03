@@ -42,16 +42,16 @@ EDA_data_NM %>%
 
 P <- EDA_data_NM %>%
   ggplot(aes(x = TIME, y = ERTAPENEM, color = factor(Pid), group = Pid)) +
-  geom_line(size = 1) +                               # Line thickness
-  geom_point(size = 2, shape = 14) +                  # Bullet points on the line
+  geom_line(size = 1) +                               
+  geom_point(size = 2, shape = 14) +                  
   labs(
     title = "Patient Plasma Concentration-Time profiles",
     x = "Time (hours)",
-    y = "Ertapenem Concentration (µg/mL)",            # <-- Moved here
+    y = "Ertapenem Concentration (µg/mL)",            
     color = "Patient ID"
   ) +
   theme_minimal() +
-  theme(                                              # <-- Added missing +
+  theme(                                              
     plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
     axis.title = element_text(size = 12),
     legend.title = element_text(size = 11),
@@ -65,8 +65,8 @@ ggsave("EDA_second_combined_line_graph.png", P, width = 8, height = 5)
 
 p <- EDA_data_NM %>%
   ggplot(aes(x = TIME, y = ERTAPENEM, color = factor(Pid), group = Pid)) +
-  geom_line(size = 1) +                               # Line with unique color
-  geom_point(size = 2, shape = 14)+                              # Bullet points
+  geom_line(size = 1) +                               
+  geom_point(size = 2, shape = 14)+                              
   facet_wrap(~ Pid, ncol = 1, scales = "free_y") +    # 3 separate graphs
   labs(
     title = "Ertapenem Concentration Over Time by Patient",
@@ -83,5 +83,6 @@ p <- EDA_data_NM %>%
 
 ggsave("Individuals_EDA_line_graph_B.png", p, width = 8, height = 5)
 ```
+
 
 
